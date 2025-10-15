@@ -13,10 +13,10 @@ const CONFIG = {
   DB_VERSION: 1,
 
   // API Endpoints
-  API_BASE_URL: 'https://95d9kv2k-5000.inc1.devtunnels.ms/api',
+  API_BASE_URL: 'https://jsonplaceholder.typicode.com',
   API_ENDPOINTS: {
-    CATCH: '/catch',
-    COMMUNITY: '/catch'
+    CATCH: '/posts',
+    COMMUNITY: '/users'
   },
 
   // Screen Names
