@@ -150,13 +150,19 @@ class CommunityManager {
   async showCommunity() {
     try {
       Utils.showLoading('Loading community data...');
+      
+      // Log that we're making an API call
+      console.log('🌐 Making API call to fetch community data...');
+      Utils.showToast('Fetching community data from API...', 'info');
 
       // Try to fetch from server
       const apiResult = await apiService.getCommunityData();
 
       Utils.hideLoading();
-
+      
       if (apiResult.success && apiResult.data) {
+        console.log('✅ API call successful! Received data:', apiResult.data);
+        Utils.showToast('Community data loaded from API!', 'success');
         // Display the data
         const modal = document.createElement('div');
         modal.className = 'fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4';
